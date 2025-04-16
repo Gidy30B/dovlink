@@ -84,6 +84,7 @@ export async function createNewPatient(data: any, pid: string) {
       medical_history,
       insurance_provider,
       insurance_number,
+      doctor_id, // Ensure doctor_id is included in the data
       ...patientDetails
     } = patientData;
 
@@ -91,6 +92,7 @@ export async function createNewPatient(data: any, pid: string) {
       data: {
         ...patientDetails,
         id: patient_id,
+        doctor_id, // Pass doctor_id to the patient record
         emergency_contacts: {
           create: [
             {

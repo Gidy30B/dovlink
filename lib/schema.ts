@@ -41,6 +41,7 @@ export const PatientFormSchema = z.object({
   medical_history: z.string().optional(),
   insurance_provider: z.string().optional(),
   insurance_number: z.string().optional(),
+  doctor_id: z.string().min(1, "Doctor ID is required"), // Added doctor_id field
   privacy_consent: z
     .boolean()
     .default(false)
